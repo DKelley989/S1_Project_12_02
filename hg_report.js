@@ -12,19 +12,24 @@
 	
 */
 
-
+// Var: This is a variable that stores the concatenation of table elements with each of the variables of the product.
 var gameReport = "<h1>" + itemTitle + "</h1>" + "<h2>By:" + itemManufacturer + "</h2> <img src='hg_" + itemID + ".png' alt='id' id='gameImg' /> <table><tr><th>Product ID</th><td>" + itemID + "</td></tr> <tr><th>List Price</th><td>" + itemPrice + "</td></tr> <tr><th>Platform</th><td>" + itemPlatform + "</td></tr> <tr><th>ESRB Rating</th><td>" + itemESRB + "</td></tr> <tr><th>Condition</th><td>" + itemCondition + "</td></tr> <tr><th>Release</th><td>" + itemRelease + "</td></tr></table>" + itemSummary;
 
+//// This sets the first article element equal to the value of the gameReport variable.
 document.getElementsByTagName("article")[0].innerHTML = gameReport;
 
+// Var: This a variable that stores the rating sum.
 var ratingSum = 0;
 
+// Var: This creates a variable called ratingsCount and sets it equal to the lenght of the ratings array.
 var ratingsCount = ratings.length;
 
+// For: This is a loop that traverses through the ratings array to add up the sum of the ratings.
 for (var i = 0; i < ratingsCount; i++) {
     ratingSum += ratings[i];
 }
 
+// Var: This is a variable set to find the ratings average by dividing the sum of the ratings by the number of ratings.
 var ratingsAvg = ratingSum / ratingsCount;
 
 var ratingReport = " <h1>Customer Reviews</h1> <h2>" + ratingsAvg + " out of 5 stars (" + ratingsCount + " reviews)</h2>";
